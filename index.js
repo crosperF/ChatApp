@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 const http = require("http");
-const { sourceMapsEnabled } = require("process");
+// const { sourceMapsEnabled } = require("process");
 const server = http.createServer(app);
 
 const { Server } = require("socket.io");
@@ -19,11 +19,9 @@ io.on("connection", (socket) => {
         console.log("user disconnected");
     });
 
-    socket.on("chat message", (msg) => {
-        console.log("input message from the user: " + msg);
-        io.emit("message update", msg);
+    socket.on("chat message", (data) => {
+        io.emit("message update", data);
     });
-
 });
 
 server.listen(3000, () => {

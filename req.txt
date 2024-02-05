@@ -1,0 +1,4 @@
+- Just a room any one can join and send texts
+- Ask for people's nicknames and send texts
+- Store the messages of the rooms - Call it community rooms
+- 
